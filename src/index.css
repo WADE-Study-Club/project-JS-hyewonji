@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    background-color: #65BAF5;
+}
+
+html,
+body{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+main{
+    display: flex;
+    width: 70%;
+    height: 80%;
+}
+
+.js-logIn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    border-radius: 13px 0 0 13px;
+    background-color: #FFFFFF;
+}
+
+.js-logIn .title{
+    margin:0;
+    margin-bottom: 55px;
+    font-size: 40px;
+    color: #0C1066;
+}
+
+.js-logIn input{
+    width: 70%;
+    height: 60px;
+    margin-bottom: 33px;
+    padding-left: 25px;
+    border-radius: 30px;
+    border: none;   
+    box-shadow: 0 0 2rem rgba(0,0,255,.3);
+}
+
+.js-logIn button{
+    width: 120px;
+    height: 50px;
+    margin-bottom: 50px;
+    border:none;
+    border-radius:25px;
+    background-color: #D3D3D3;
+    color:white;
+    font-size: 17px;
+}
+
+.js-logIn .signUp{
+    width:70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signUp .signUpBtn{
+    color:#FF3A82;
+}
