@@ -14,7 +14,7 @@ body{
 
 main{
     display: flex;
-    width: 70%;
+    width: 75%;
     height: 80%;
 }
 
@@ -64,4 +64,24 @@ main{
 
 .signUp .signUpBtn{
     color:#FF3A82;
+}
+
+.js-img{
+    background:url(https://source.unsplash.com/random/1200x900?mountain) center center/cover no-repeat;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 0 13px 13px 0;
+    color:white;
+}
+
+.js-img .img{
+    margin:0;
+    margin-left: 50px;
+    font-size: 43px;
+}
+
+.js-img .underBar{
+    margin-bottom: 130px;
 }
