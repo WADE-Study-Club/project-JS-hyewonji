@@ -28,14 +28,22 @@ main{
     background-color: #FFFFFF;
 }
 
-.js-logIn .title{
+.logIn__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logIn__form .title{
     margin:0;
     margin-bottom: 55px;
     font-size: 40px;
     color: #0C1066;
 }
 
-.js-logIn input{
+.logIn__form input{
     width: 70%;
     height: 60px;
     margin-bottom: 33px;
@@ -43,6 +51,10 @@ main{
     border-radius: 30px;
     border: none;   
     box-shadow: 0 0 2rem rgba(0,0,255,.3);
+}
+
+.logIn__form input:focus{
+    outline:none;
 }
 
 .js-logIn button{
@@ -56,14 +68,23 @@ main{
     font-size: 17px;
 }
 
-.js-logIn .signUp{
+.js-logIn button:focus{
+    outline:none;
+    cursor: pointer;
+}
+
+.js-logIn .signup{
     width:70%;
     display: flex;
     justify-content: space-between;
 }
 
-.signUp .signUpBtn{
+.signup .signupBtn{
     color:#FF3A82;
+}
+
+.signup .signupBtn:hover{
+    cursor: pointer;
 }
 
 .js-img{
