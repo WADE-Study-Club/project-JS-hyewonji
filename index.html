@@ -13,13 +13,13 @@
         <div class="js-logIn">
             <form class="logIn__form">
                 <h1 class="logIn title">Login</h1>
-                <input type="text" class="eMail" placeholder="Email">
-                <input type="text" class="password" placeholder="Password">
+                <input type="text" class="input eMail" name="userId" placeholder="Email">
+                <input type="password" class="input password" name="password" placeholder="Password">
+                <input type="button" onclick="check(this.form)" class="logIn_btn" value="Login">
             </form>
-            <button class="logIn__btn">Login</button>
             <div class="logIn signup">
                 <span class="signupQ">Don't have an account?</span>
-                <span class="signupBtn">SIGN UP</span>
+                <a href="#" onclick="window.location.reload(true);" class="signupBtn">SING UP</a>
             </div>
         </div>
         <div class="js-img">

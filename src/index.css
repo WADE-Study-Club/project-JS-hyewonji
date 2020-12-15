@@ -41,9 +41,11 @@ main{
     margin-bottom: 55px;
     font-size: 40px;
     color: #0C1066;
+    animation-duration: 2s ;
+    animation-name: topToBottom;
 }
 
-.logIn__form input{
+.logIn__form .input{
     width: 70%;
     height: 60px;
     margin-bottom: 33px;
@@ -53,11 +55,11 @@ main{
     box-shadow: 0 0 2rem rgba(0,0,255,.3);
 }
 
-.logIn__form input:focus{
+.logIn__form .input:focus{
     outline:none;
 }
 
-.js-logIn button{
+.js-logIn .logIn_btn{
     width: 120px;
     height: 50px;
     margin-bottom: 50px;
@@ -105,4 +107,14 @@ main{
 
 .js-img .underBar{
     margin-bottom: 130px;
+}
+
+@keyframes topToBottom{
+    from{
+        position: relative;
+        top:-70px;
+    }
+    to{
+        top:0;
+    }
 }
