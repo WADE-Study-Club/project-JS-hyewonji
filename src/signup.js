@@ -1,20 +1,38 @@
 const form = document.querySelector(".logIn__form");
 const submit = form.querySelector(".logIn_btn");
 const users_LS = "users";
+let users = []
+
+
+function saveUsers() {
+    localStorage.setItem(users_LS, JSON.stringify(users))
+}
 
 function checkUsers() {
     const loadUsers = localStorage.getItem(users_LS);
+    const parsedUsers = JSON.parse(loadUsers);
     const userId = form.userId.value;
     const password = form.password.value;
+    const userInfo = {
+        id: userId,
+        password: password
+    }
+    let exist = false;
+
     if (loadUsers !== null) {
-        const parsedUsers = JSON.parse(loadUsers);
-        parsedUsers.forEach(function (user) {
-            if (user.id === userId && user.password === password) {
-                console.log("welcome")
-            } else {
-                console.log("try again")
+        parsedUsers.some(function (user) {
+            if (user.id === userId) {
+                alert("Error: The Email Address Is Already In Use By Another Account.")
+                exist = true;
             }
         })
+    }
+
+    if (exist === false) {
+        parsedUsers.push(userInfo);
+        users = parsedUsers;
+        console.log(parsedUsers, users);
+        saveUsers();
     }
 }
 
@@ -62,6 +80,9 @@ function checkValidPassword(form) {
 
 function init() {
     form.password.addEventListener("input", checkValidForm);
+    submit.addEventListener("click", checkUsers)
 }
 
 init()
+
+//{"id":"hyewon@naver.com","password":"123456"}
