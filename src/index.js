@@ -1,7 +1,25 @@
 const form = document.querySelector(".logIn__form");
 const submit = form.querySelector(".logIn_btn");
+const users_LS = "users";
+let users = [];
 
-function check() {
+function checkUsers() {
+    const loadUsers = localStorage.getItem(users_LS);
+    const userId = form.userId.value;
+    const password = form.password.value;
+    if (loadUsers !== null) {
+        const parsedUsers = JSON.parse(loadUsers);
+        parsedUsers.forEach(function (user) {
+            if (user.id === userId && user.password === password) {
+                console.log("welcome")
+            } else {
+                console.log("try again")
+            }
+        })
+    }
+}
+
+function checkValidForm() {
     const chkUserId = checkValidUsername(form),
         chkPassword = checkValidPassword(form);
 
@@ -11,7 +29,6 @@ function check() {
         submit.style.backgroundColor = "#D3D3D3"
     }
 
-    chkPassword;
 }
 
 function checkValidUsername() {
@@ -26,7 +43,6 @@ function checkValidUsername() {
         alert("Error: The Email Address Is Badly Formatted.");
         return false
     } else {
-        console.log(userId);
         return true
     }
 }
@@ -41,13 +57,17 @@ function checkValidPassword(form) {
     if (password.length < 6) {
         return false
     } else {
-        console.log(password);
         return true
     }
 }
 
+function loadUsers() {
+
+}
+
 function init() {
-    form.password.addEventListener("change", check);
+    loadUsers();
+    form.password.addEventListener("input", checkValidForm);
 }
 
 init()
