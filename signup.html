@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/index.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="js-logIn">
+            <form class="logIn__form">
+                <h1 class="logIn title">Signup</h1>
+                <input type="email" class="input eMail" name="userId" placeholder="Email">
+                <input type="password" class="input password" name="password" placeholder="Password">
+                <input type="button" class="logIn_btn" name="submit" value="Signup">
+            </form>
+            <div class="logIn signup">
+                <span class="signupQ">Already Have an account?</span>
+                <a href="login.html" onclick="window.location.reload(true);" class="signupBtn">LOGIN</a>
+            </div>
+        </div>
+        <div class="js-img">
+            <h1 class="img greeting">Join Minimus Today!</h1>
+            <h1 class="img underBar">_______</h1>
+        </div>
+    </main>
+
+    <section class="notes" style="display: none;"></section>
+    <script src="/src/signup.js"></script>
+</body>
+
+</html>
