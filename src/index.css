@@ -3,7 +3,8 @@ body{
     align-items: center;
     justify-content: center;
     margin:0;
-    background-color: #65BAF5;
+    background: -webkit-linear-gradient(-1deg, rgb(255, 248, 129), rgb(109, 237, 255));
+    background: linear-gradient(-1deg, rgb(255, 248, 129), rgb(109, 237, 255));
 }
 
 html,
@@ -109,6 +110,21 @@ main{
     margin-bottom: 130px;
 }
 
+.notes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom:0;
+    width: 83%;
+    height: 80px;
+    border-radius: 5px 5px 0 0 ;
+    background-color: #DC143C;
+    color:white;
+    font-size: 22px;
+    animation: fadeIn 1s ease-in-out;
+}
+
 @keyframes topToBottom{
     from{
         position: relative;
@@ -116,5 +132,14 @@ main{
     }
     to{
         top:0;
+    }
+}
+
+@keyframes fadeIn {
+    from{
+        transform: translateY(100px);
+    }
+    to{
+        transform: none;
     }
 }

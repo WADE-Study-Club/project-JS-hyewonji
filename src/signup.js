@@ -1,5 +1,6 @@
 const form = document.querySelector(".logIn__form");
 const submit = form.querySelector(".logIn_btn");
+const notes = document.querySelector(".notes");
 const users_LS = "users";
 let users = []
 
@@ -31,8 +32,8 @@ function checkUsers() {
     if (exist === false) {
         parsedUsers.push(userInfo);
         users = parsedUsers;
-        console.log(parsedUsers, users);
         saveUsers();
+        alert("Sign up is complete.");
     }
 }
 
@@ -57,7 +58,6 @@ function checkValidUsername() {
     }
 
     if (exptext.test(userId) === false) {
-        alert("Error: The Email Address Is Badly Formatted.");
         return false
     } else {
         return true
@@ -79,10 +79,9 @@ function checkValidPassword(form) {
 }
 
 function init() {
+    form.userId.addEventListener("input", checkValidForm);
     form.password.addEventListener("input", checkValidForm);
     submit.addEventListener("click", checkUsers)
 }
 
 init()
-
-//{"id":"hyewon@naver.com","password":"123456"}

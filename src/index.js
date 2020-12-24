@@ -1,8 +1,15 @@
 const form = document.querySelector(".logIn__form");
 const submit = form.querySelector(".logIn_btn");
+const notes = document.querySelector(".notes");
 const users_LS = "users";
 
 function checkUsers() {
+    const chkUserId = checkValidUsername(form)
+    if (chkUserId === false) {
+        notes.style = "display:block";
+        notes.innerHTML = "Error: The Email Address Is Badly Formatted.";
+    }
+
     const loadUsers = localStorage.getItem(users_LS);
     const userId = form.userId.value;
     const password = form.password.value;
@@ -15,6 +22,8 @@ function checkUsers() {
                 console.log("try again")
             }
         })
+    } else {
+        console.log("Sign up Please")
     }
 }
 
@@ -39,7 +48,6 @@ function checkValidUsername() {
     }
 
     if (exptext.test(userId) === false) {
-        alert("Error: The Email Address Is Badly Formatted.");
         return false
     } else {
         return true
@@ -61,7 +69,9 @@ function checkValidPassword(form) {
 }
 
 function init() {
+    form.userId.addEventListener("input", checkValidForm);
     form.password.addEventListener("input", checkValidForm);
+    submit.addEventListener("click", checkUsers)
 }
 
 init()
